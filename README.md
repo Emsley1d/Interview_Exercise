@@ -48,3 +48,20 @@ They have also added, if possible, to be able to automatically calculate time re
 based on what timesheets have been entered up to now and if any Employee works over 10 hours in
 a day, an email should be automatically sent to management.
 #
+
+## Technology Used
+
+After reasarching the various technologies used within the team I decided to use Windows Forms (C#, VB.NET) for a couple of reaons:
+
+-   Although I haven't created anything with C# I do have some prior knowledge of it.
+-   Of all the options C# is most like the languages I am more proficient with.
+-   I am keen to try working with Windows Forms and interested to see how they interact with C#.
+-   Windows Forms look like the quickest way of creating a suitable UI for the application.
+-   I don't think I stand to gain much in the way of experience if I opt to use Office Based Applications (Excel, Word).
+-   I have never worked with Mobile Applications (Xamarin, PowerApps) before and with the timescale involved I don't think now is the best time to start.
+-   Although I am familiar Web Based Applications I have never used PHP or ASP.NET.
+#
+
+
+
+
