@@ -1,5 +1,4 @@
 # Interview Exercise
-#
 
 ## Objective
 
@@ -11,7 +10,6 @@ This is not a production exercise and it will never be used in a real environmen
 use real data. The purpose of this exercise is merely academic, to show your knowledge and
 technical skills in different aspects of what would be representative of your potential future role as a
 Software Developer within the team.
-
 #
 
 ## Description
@@ -20,10 +18,10 @@ employees.
 
 For reference, the technologies used within our team that could be used for this exercise are:
 
-• Windows Forms (C#, VB.NET)
-• Web Based Applications (PHP, ASP.NET)
-• Mobile Applications (Xamarin, PowerApps)
-• Office Based Applications (Excel, Word)
+• Windows Forms (C#, VB.NET)<br>
+• Web Based Applications (PHP, ASP.NET)<br>
+• Mobile Applications (Xamarin, PowerApps)<br>
+• Office Based Applications (Excel, Word)<br>
 
 For the purposes of this exercise, we encourage you to use these, but we would consider
 applicants using a different approaches if the solution provided is well designed and/or is
@@ -51,17 +49,25 @@ a day, an email should be automatically sent to management.
 
 ## Technology Used
 
-After reasarching the various technologies used within the team I decided to use Windows Forms (C#, VB.NET) for a couple of reaons:
+After reasarching the various technologies used within the team I initially decided to use Windows Forms (C#, VB.NET) for a couple of reaons:
 
 -   Although I haven't created anything with C# I do have some prior knowledge of it.
 -   Of all the options C# is most like the languages I am more proficient with.
 -   I am keen to try working with Windows Forms and interested to see how they interact with C#.
 -   Windows Forms look like the quickest way of creating a suitable UI for the application.
 -   I don't think I stand to gain much in the way of experience if I opt to use Office Based Applications (Excel, Word).
--   I have never worked with Mobile Applications (Xamarin, PowerApps) before and with the timescale involved I don't think now is the best time to start.
+-   I have never worked with Mobile Applications (Xamarin, PowerApps) before and although I would like to do so, with the timescale involved I don't think now is the best time to start.
 -   Although I am familiar Web Based Applications I have never used PHP or ASP.NET.
 #
 
+## Planning
 
+Before getting to work I wanted to establish the best way to create a Windows Forms based application. The general consensus is that Visual Studio is better to create Windows Forms based applications than VS Code. I downloaded Visual Studio and attempted to create a "Windows Forms.App(.NET)" project however soon learned that working on a Mac I was unable to create such a project. I also came to realise that developing a Timesheet Application that was limited to use on Windows devices (atleast without the installation of additional software) could be somewhat limiting and an unnessecary hurdle for WEF and their employees. 
+#
+
+## Actual Technology Used
+
+For the above reasons I then chose to develop a Web Based Application using PHP (which I know can be created in VS Code) and obviously being Web Based isn't limited to Windows desktop.
+#
 
 
