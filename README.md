@@ -1,54 +1,53 @@
 # Interview Exercise
 
+
 ## Brief:
 
-        ## Objective
+The goal of this exercise is to provide a showcase of your software design capabilities, your software
+development skills and your knowledge of best practices.
 
-        The goal of this exercise is to provide a showcase of your software design capabilities, your software
-        development skills and your knowledge of best practices.
+For this reason, this exercise tries to cover several different aspects of a typical software solution.
+This is not a production exercise and it will never be used in a real environment; it is not expected to
+use real data. The purpose of this exercise is merely academic, to show your knowledge and
+technical skills in different aspects of what would be representative of your potential future role as a
+Software Developer within the team.
 
-        For this reason, this exercise tries to cover several different aspects of a typical software solution.
-        This is not a production exercise and it will never be used in a real environment; it is not expected to
-        use real data. The purpose of this exercise is merely academic, to show your knowledge and
-        technical skills in different aspects of what would be representative of your potential future role as a
-        Software Developer within the team.
-        #
 
-        ## Description
+## Description
 
-        The task is to develop an application where end users can enter and track Timesheets for given
-        employees.
+The task is to develop an application where end users can enter and track Timesheets for given
+employees.
 
-        For reference, the technologies used within our team that could be used for this exercise are:
+For reference, the technologies used within our team that could be used for this exercise are:
 
-        • Windows Forms (C#, VB.NET)<br>
-        • Web Based Applications (PHP, ASP.NET)<br>
-        • Mobile Applications (Xamarin, PowerApps)<br>
-        • Office Based Applications (Excel, Word)<br>
+• Windows Forms (C#, VB.NET)<br>
+• Web Based Applications (PHP, ASP.NET)<br>
+• Mobile Applications (Xamarin, PowerApps)<br>
+• Office Based Applications (Excel, Word)<br>
 
-        For the purposes of this exercise, we encourage you to use these, but we would consider
-        applicants using a different approaches if the solution provided is well designed and/or is
-        creative enough.
-        # 
+For the purposes of this exercise, we encourage you to use these, but we would consider
+applicants using a different approaches if the solution provided is well designed and/or is
+creative enough.
 
-        ## Business Case
 
-        WEF would like you to manage their timesheets electronically for their employees.
+## Business Case
 
-        Currently, they submit their timesheets via paper which is then stored in Folders within their office.
-        They have grown to a size where they can no longer manage this.
+WEF would like you to manage their timesheets electronically for their employees.
 
-        WEF have no strong feelings around which technology they would like to use, they are
-        simply looking to digitise this process to minimise errors and speed up entry.
+Currently, they submit their timesheets via paper which is then stored in Folders within their office.
+They have grown to a size where they can no longer manage this.
 
-        The timesheet application needs to be able to select a Job, an Employee and the time taken on that
-        job in each day, once data has been entered, they would like to be able to review timesheets
-        entered via a Timesheet Summary Report.
+WEF have no strong feelings around which technology they would like to use, they are
+simply looking to digitise this process to minimise errors and speed up entry.
 
-        They have also added, if possible, to be able to automatically calculate time remaining on each job
-        based on what timesheets have been entered up to now and if any Employee works over 10 hours in
-        a day, an email should be automatically sent to management.
-        #
+The timesheet application needs to be able to select a Job, an Employee and the time taken on that
+job in each day, once data has been entered, they would like to be able to review timesheets
+entered via a Timesheet Summary Report.
+
+They have also added, if possible, to be able to automatically calculate time remaining on each job
+based on what timesheets have been entered up to now and if any Employee works over 10 hours in
+a day, an email should be automatically sent to management.
+ #
 
 ## Technology Used
 
@@ -83,7 +82,15 @@ Base.php file created and attempted to extend to login.php; it didn't work and I
 Installed composer which then allowed me to install Smarty. Created .gitignore to prevent vendor files uploading to GitHub.<br>
 
 Smarty set up in main.php but not rendering base.tpl or login.tpl; instead I receive a 404 error and my code automatically downloads.
-Google would suggest my web server isn't set up to serve files with a .tpl extension? Established I would need to add "AddType application/x-httpd-php .tpl" to my Apache "httpd.conf" file. Looked at alternative ways to render my the .tpl files but I understand using the .tpl file extension is the best practice. Updated my Apache "httpd.conf" file and restarted Apache however still having problems. Walkthroughs suggested creating a ".htaccess" file in my project and populating it with "AddType application/x-httpd-php .tpl"; I have done this but my .tpl files still don't render in browser and continue to download automatically.<br>
+Google would suggest my web server isn't set up to serve files with a .tpl extension? Established I would need to add "AddType application/x-httpd-php .tpl" to my Apache "httpd.conf" file. Looked at alternative ways to render my the .tpl files but I understand using the .tpl file extension is the best practice. Updated my Apache "httpd.conf" file and restarted Apache however still having problems. Walkthroughs suggested creating a ".htaccess" file in my project and populating it with "AddType application/x-httpd-php .tpl"; I have done this but my .tpl files still don't render in browser and continue to download automatically. <br>
+I do receive a "200" status code for the get request (::1]:52243 [200]: GET /PHP/Templates/login.tpl) so my templates are being found and served to the browser.
+I attempted to use the .smarty file extension in place of .tpl but my VS Code failed to recognise the file extension and treated them as plain text. I changed my .tpl files to .php (I appreciate this isn't the done thing); they now render in my browser however base.php does not extend to my other pages. Realised I could extend base.php to other php files by including the below on them:
+
+        <?php
+        include 'base.php';
+        ?>
+
+
 
 
 
