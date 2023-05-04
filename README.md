@@ -13,6 +13,7 @@ Software Developer within the team.
 #
 
 ## Description
+
 The task is to develop an application where end users can enter and track Timesheets for given
 employees.
 
@@ -49,7 +50,7 @@ a day, an email should be automatically sent to management.
 
 ## Technology Used
 
-After reasarching the various technologies used within the team I initially decided to use Windows Forms (C#, VB.NET) for a couple of reaons:
+After researching the various technologies used within the team I initially decided to use Windows Forms (C#, VB.NET) for a couple of reasons:
 
 -   Although I haven't created anything with C# I do have some prior knowledge of it.
 -   Of all the options C# is most like the languages I am more proficient with.
@@ -62,12 +63,22 @@ After reasarching the various technologies used within the team I initially deci
 
 ## Planning
 
-Before getting to work I wanted to establish the best way to create a Windows Forms based application. The general consensus is that Visual Studio is better to create Windows Forms based applications than VS Code. I downloaded Visual Studio and attempted to create a "Windows Forms.App(.NET)" project however soon learned that working on a Mac I was unable to create such a project. I also came to realise that developing a Timesheet Application that was limited to use on Windows devices (atleast without the installation of additional software) could be somewhat limiting and an unnessecary hurdle for WEF and their employees. 
+Before getting to work I wanted to establish the best way to create a Windows Forms based application. The general consensus is that Visual Studio is better to create Windows Forms based applications with than VS Code. I downloaded Visual Studio and attempted to create a "Windows Forms.App(.NET)" project however soon learned that working on a Mac I was unable to create such a project. I then came to realise that developing a Timesheet Application that was limited to use on Windows desktop devices (at least without the installation of additional software) could be somewhat limiting and an unnecessary hurdle for WEF and their employees. 
 #
 
 ## Actual Technology Used
 
-For the above reasons I then chose to develop a Web Based Application using PHP (which I know can be created in VS Code) and obviously being Web Based isn't limited to Windows desktop.
+For the above reasons I then chose to develop a Web Based Application using PHP; despite having never used it before. I decided to avoid ASP.NET; as it's more suited to large scale applications I think it would be overkill for WEF's needs.
 #
+
+
+
+## Build Notes.
+
+Having never used PHP before I researched the basic PHP file structure.
+Test.php file created and running on live server.
+Base.php file created and attempted to extend to login.php; it didn't work and I established I needed to install Smarty to allow me to do so.
+Installed composer which then allowed me to install Smarty.
+
 
 
