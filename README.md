@@ -1,52 +1,54 @@
 # Interview Exercise
 
-## Objective
+## Brief:
 
-The goal of this exercise is to provide a showcase of your software design capabilities, your software
-development skills and your knowledge of best practices.
+        ## Objective
 
-For this reason, this exercise tries to cover several different aspects of a typical software solution.
-This is not a production exercise and it will never be used in a real environment; it is not expected to
-use real data. The purpose of this exercise is merely academic, to show your knowledge and
-technical skills in different aspects of what would be representative of your potential future role as a
-Software Developer within the team.
-#
+        The goal of this exercise is to provide a showcase of your software design capabilities, your software
+        development skills and your knowledge of best practices.
 
-## Description
+        For this reason, this exercise tries to cover several different aspects of a typical software solution.
+        This is not a production exercise and it will never be used in a real environment; it is not expected to
+        use real data. The purpose of this exercise is merely academic, to show your knowledge and
+        technical skills in different aspects of what would be representative of your potential future role as a
+        Software Developer within the team.
+        #
 
-The task is to develop an application where end users can enter and track Timesheets for given
-employees.
+        ## Description
 
-For reference, the technologies used within our team that could be used for this exercise are:
+        The task is to develop an application where end users can enter and track Timesheets for given
+        employees.
 
-• Windows Forms (C#, VB.NET)<br>
-• Web Based Applications (PHP, ASP.NET)<br>
-• Mobile Applications (Xamarin, PowerApps)<br>
-• Office Based Applications (Excel, Word)<br>
+        For reference, the technologies used within our team that could be used for this exercise are:
 
-For the purposes of this exercise, we encourage you to use these, but we would consider
-applicants using a different approaches if the solution provided is well designed and/or is
-creative enough.
-# 
+        • Windows Forms (C#, VB.NET)<br>
+        • Web Based Applications (PHP, ASP.NET)<br>
+        • Mobile Applications (Xamarin, PowerApps)<br>
+        • Office Based Applications (Excel, Word)<br>
 
-## Business Case
+        For the purposes of this exercise, we encourage you to use these, but we would consider
+        applicants using a different approaches if the solution provided is well designed and/or is
+        creative enough.
+        # 
 
-WEF would like you to manage their timesheets electronically for their employees.
+        ## Business Case
 
-Currently, they submit their timesheets via paper which is then stored in Folders within their office.
-They have grown to a size where they can no longer manage this.
+        WEF would like you to manage their timesheets electronically for their employees.
 
-WEF have no strong feelings around which technology they would like to use, they are
-simply looking to digitise this process to minimise errors and speed up entry.
+        Currently, they submit their timesheets via paper which is then stored in Folders within their office.
+        They have grown to a size where they can no longer manage this.
 
-The timesheet application needs to be able to select a Job, an Employee and the time taken on that
-job in each day, once data has been entered, they would like to be able to review timesheets
-entered via a Timesheet Summary Report.
+        WEF have no strong feelings around which technology they would like to use, they are
+        simply looking to digitise this process to minimise errors and speed up entry.
 
-They have also added, if possible, to be able to automatically calculate time remaining on each job
-based on what timesheets have been entered up to now and if any Employee works over 10 hours in
-a day, an email should be automatically sent to management.
-#
+        The timesheet application needs to be able to select a Job, an Employee and the time taken on that
+        job in each day, once data has been entered, they would like to be able to review timesheets
+        entered via a Timesheet Summary Report.
+
+        They have also added, if possible, to be able to automatically calculate time remaining on each job
+        based on what timesheets have been entered up to now and if any Employee works over 10 hours in
+        a day, an email should be automatically sent to management.
+        #
 
 ## Technology Used
 
@@ -71,14 +73,19 @@ Before getting to work I wanted to establish the best way to create a Windows Fo
 For the above reasons I then chose to develop a Web Based Application using PHP; despite having never used it before. I decided to avoid ASP.NET; as it's more suited to large scale applications I think it would be overkill for WEF's needs.
 #
 
-
-
 ## Build Notes.
 
-Having never used PHP before I researched the basic PHP file structure.
-Test.php file created and running on live server.
-Base.php file created and attempted to extend to login.php; it didn't work and I established I needed to install Smarty to allow me to do so.
-Installed composer which then allowed me to install Smarty.
+Ordinarily I would create a Wireframe and ERD before starting to create a project however having never used PHP before (and having immediately run in to problems with Windows Forms) I wanted to make sure I could get some basic files and folders up and running in VS Code and on localhost.
+
+I researched the basic PHP file structure.<br>
+Test.php file created and running on live server.<br>
+Base.php file created and attempted to extend to login.php; it didn't work and I established I needed to install Smarty to allow me to do so.<br>
+Installed composer which then allowed me to install Smarty. Created .gitignore to prevent vendor files uploading to GitHub.<br>
+
+Smarty set up in main.php but not rendering base.tpl or login.tpl; instead I receive a 404 error and my code automatically downloads.
+Google would suggest my web server isn't set up to serve files with a .tpl extension? Established I would need to add "AddType application/x-httpd-php .tpl" to my Apache "httpd.conf" file. Looked at alternative ways to render my the .tpl files but I understand using the .tpl file extension is the best practice. Updated my Apache "httpd.conf" file and restarted Apache however still having problems. Walkthroughs suggested creating a ".htaccess" file in my project and populating it with "AddType application/x-httpd-php .tpl"; I have done this but my .tpl files still don't render in browser and continue to download automatically.<br>
+
+
 
 
 
