@@ -84,14 +84,21 @@ Installed composer which then allowed me to install Smarty. Created .gitignore t
 Smarty set up in main.php but not rendering base.tpl or login.tpl; instead I receive a 404 error and my code automatically downloads.
 Google would suggest my web server isn't set up to serve files with a .tpl extension? Established I would need to add "AddType application/x-httpd-php .tpl" to my Apache "httpd.conf" file. Looked at alternative ways to render my the .tpl files but I understand using the .tpl file extension is the best practice. Updated my Apache "httpd.conf" file and restarted Apache however still having problems. Walkthroughs suggested creating a ".htaccess" file in my project and populating it with "AddType application/x-httpd-php .tpl"; I have done this but my .tpl files still don't render in browser and continue to download automatically. <br>
 I do receive a "200" status code for the get request (::1]:52243 [200]: GET /PHP/Templates/login.tpl) so my templates are being found and served to the browser.
-I attempted to use the .smarty file extension in place of .tpl but my VS Code failed to recognise the file extension and treated them as plain text. I changed my .tpl files to .php (I appreciate this isn't the done thing); they now render in my browser however base.php does not extend to my other pages. Realised I could extend base.php to other php files by including the below on them:
+I attempted to use the .smarty file extension in place of .tpl but my VS Code failed to recognise the file extension and treated them as plain text. I changed my .tpl files to .php (having not worked with PHP before I believe this isn't the done thing?); they now render in my browser however base.php does not extend to my other pages. Realised I could extend base.php to other php files by including the below on them:
 
         <?php
         include 'base.php';
         ?>
 
 base.php was effectively going to be a homepage but I can't get the block content to extend to other pages so I am just going to turn it into the nav bar.
-I was going to create login and registration functions (authentication and authorisation are two of my favourite things to develop) but the brief doesn't stipulate these are required so I changed login.php to timesheet.php and created A Time Sheet Form.
+
+I was going to create login and registration functions (authentication and authorisation are two of my favourite things to develop) but the brief doesn't stipulate these are required so I changed login.php to timesheet.php and created A Time Sheet Form. Having said that as this is a Web Application anyone could access it so it'll need to be protected with credentials. 
+
+Created Time Sheet Report page so you can search by Employee, Job Type and Date (search yet to work)
+Created Update page to add/remove employees/job types (psuedo code only)
+Creating CalculateTime function to calculate time taken from job start to finish.
+
+
 
 
 
