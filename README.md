@@ -90,9 +90,8 @@ I attempted to use the .smarty file extension in place of .tpl but my VS Code fa
         include 'base.php';
         ?>
 
-
-
-
+base.php was effectively going to be a homepage but I can't get the block content to extend to other pages so I am just going to turn it into the nav bar.
+I was going to create login and registration functions (authentication and authorisation are two of my favourite things to develop) but the brief doesn't stipulate these are required so I changed login.php to timesheet.php and created A Time Sheet Form.
 
 
 
