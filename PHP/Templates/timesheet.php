@@ -61,8 +61,7 @@ include 'nav.php';
 			<label for="time_taken">Time Taken:</label>
 			<input type="text" id="time_taken" name="time_taken" readonly><br><br>
 
-			<button type="submit">Save Time Sheet</button>&nbsp &nbsp<button type="reset" value="Reset">Clear
-				Form</button>
+			<button type="submit">Save Time Sheet</button>&nbsp &nbsp<button type="reset" value="Reset">Clear Form</button>
 		</form>
 
 </div>

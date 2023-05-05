@@ -124,9 +124,18 @@ Created a table in my database as below:
 Linked the timesheet HTML form to save_timesheet.php.<br>
 Populated a timesheet form to test it however when clicking the "Save Time Sheet" button I receive the below error in browser:
 
-        Warning: Undefined variable $conn in /Users/Dan1/Desktop/PersonalProjects/Interview_Exercise/PHP/Templates/save_timesheet.php on line 15
+[save_timesheet error 1](/Images/Screenshot%202023-05-05%20at%2016.18.55.png)
 
-        Fatal error: Uncaught Error: Call to a member function query() on null in /Users/Dan1/Desktop/PersonalProjects/Interview_Exercise/PHP/Templates/save_timesheet.php:15 Stack trace: #0 {main} thrown in /Users/Dan1/Desktop/PersonalProjects/Interview_Exercise/PHP/Templates/save_timesheet.php on line 15
+Added "include 'PHP/config.php'" to the top of save_timesheet.php and tested again however another error appeared in addition to the one above:
+
+[save_timesheet error 2](/Images/Screenshot%202023-05-05%20at%2016.19.30.png)
+
+Moved config.php in to the PHP/Templates folder and amended the path on save_timesheet.php to "config.php" which resolved the issue; I'm unsure why it wouldn't work with config.php being in its original location and with the correct path on save_timesheet.php. I'll have to have a rethink of my file structure though.
+
+Tested again with config.php having been moved and I have made some progress.
+
+[save_timesheet error 3](/Images/Screenshot%202023-05-05%20at%2016.20.28.png)
+
 
 
 
