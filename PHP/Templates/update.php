@@ -17,10 +17,10 @@ include 'nav.php';
 <h3 class="update_header">Employee:</h3>
 
 <label for="start_time">Add:</label>
-		<input type="text" id="date" name="date" required>&nbsp<button type="submit">Add</button><br><br>
+		<input type="text" id="add_employee" name="add_employee">&nbsp<button type="submit">Add</button><br><br>
 
     <label for="employee">Remove:</label>
-    <select id="employee" name="employee" required>
+    <select id="remove_employee" name="remove_employee">
         <option value="">Select employee</option>
         <option value="job1">Dan Emsley</option>
         <option value="job2">John Smith</option>
@@ -33,10 +33,10 @@ include 'nav.php';
 <h3 class="update_header">Job:</h3>
 
 <label for="start_time">Add:</label>
-		<input type="text" id="date" name="date" required>&nbsp<button type="submit">add</button><br><br>
+		<input type="text" id="add_job" name="add_job">&nbsp<button type="submit">add</button><br><br>
 
     <label for="job">Remove:</label>
-    <select id="job" name="job" required>
+    <select id="remove_job" name="remove_job">
         <option value="">Select job type</option>
         <option value="job1">Job 1</option>
         <option value="job2">Job 2</option>

@@ -102,7 +102,13 @@ Creating CalculateTime function to calculate time taken from job start to finish
 
 I am happy with the basics of the Front End so am going to turn my attention to creating a database.
 
+## Database
 
+I considered using SQLite for the database (being a good option for small to medium sized web applications) but without knowing WEF Engineering's current employee count (hopefully small if they've been doing it on paper!) or potential future count I thought it best to play it safe and use MySQL due to the scalability it offers vs SQLite. 
+
+MySQL installed via brew.
+New user and database created.
+Attempting to link to database in VS Code.
 
 
 

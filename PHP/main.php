@@ -9,4 +9,6 @@ $smarty->display('PHP/Templates/home.php');
 $smarty->display('PHP/Templates/nav.php');
 $smarty->display("PHP/Templates/timesheet.php");
 
+
+
 ?>
