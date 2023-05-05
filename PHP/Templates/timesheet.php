@@ -27,7 +27,7 @@ include 'nav.php';
 
 
 	<body>
-		<form action="#" method="POST">
+		<form action="save_timesheet.php" method="POST">
 
 
 			<label for="employee">Employee:</label>

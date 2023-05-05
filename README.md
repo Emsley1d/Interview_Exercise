@@ -106,9 +106,34 @@ I am happy with the basics of the Front End so am going to turn my attention to 
 
 I considered using SQLite for the database (being a good option for small to medium sized web applications) but without knowing WEF Engineering's current employee count (hopefully small if they've been doing it on paper!) or potential future count I thought it best to play it safe and use MySQL due to the scalability it offers vs SQLite. 
 
-MySQL installed via brew.
-New user and database created.
-Attempting to link to database in VS Code.
+MySQL installed via brew and new user created.<br>
+Tried to create a MYSQL database but kept running into a syntax error "ERROR 1064 (42000)"; eventually realised the user password had to be in speech marks.<br>
+Created a table in my database as below:
+
+        mysql> CREATE TABLE timesheets (
+        ->     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        ->     employee VARCHAR(30) NOT NULL,
+        ->     job VARCHAR(30) NOT NULL,
+        ->     date DATE NOT NULL,
+        ->     start_time TIME NOT NULL,
+        ->     end_time TIME NOT NULL,
+        ->     time_taken TIME NOT NULL,
+        ->     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        -> );
+
+Linked the timesheet HTML form to save_timesheet.php.<br>
+Populated a timesheet form to test it however when clicking the "Save Time Sheet" button I receive the below error in browser:
+
+        Warning: Undefined variable $conn in /Users/Dan1/Desktop/PersonalProjects/Interview_Exercise/PHP/Templates/save_timesheet.php on line 15
+
+        Fatal error: Uncaught Error: Call to a member function query() on null in /Users/Dan1/Desktop/PersonalProjects/Interview_Exercise/PHP/Templates/save_timesheet.php:15 Stack trace: #0 {main} thrown in /Users/Dan1/Desktop/PersonalProjects/Interview_Exercise/PHP/Templates/save_timesheet.php on line 15
+
+
+
+
+
+
+
 
 
 
