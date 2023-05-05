@@ -124,17 +124,28 @@ Created a table in my database as below:
 Linked the timesheet HTML form to save_timesheet.php.<br>
 Populated a timesheet form to test it however when clicking the "Save Time Sheet" button I receive the below error in browser:
 
-[save_timesheet error 1](/Images/Screenshot%202023-05-05%20at%2016.18.55.png)
+![save_timesheet error 1](/Images/Screenshot%202023-05-05%20at%2016.18.55.png)
 
 Added "include 'PHP/config.php'" to the top of save_timesheet.php and tested again however another error appeared in addition to the one above:
 
-[save_timesheet error 2](/Images/Screenshot%202023-05-05%20at%2016.19.30.png)
+![save_timesheet error 2](/Images/Screenshot%202023-05-05%20at%2016.19.30.png)
 
 Moved config.php in to the PHP/Templates folder and amended the path on save_timesheet.php to "config.php" which resolved the issue; I'm unsure why it wouldn't work with config.php being in its original location and with the correct path on save_timesheet.php. I'll have to have a rethink of my file structure though.
 
-Tested again with config.php having been moved and I have made some progress.
+Tested again with config.php having been moved and I have made some progress. The database is now connected but the data is unable to be saved into it:
 
-[save_timesheet error 3](/Images/Screenshot%202023-05-05%20at%2016.20.28.png)
+![save_timesheet error 3](/Images//Screenshot%202023-05-05%20at%2016.32.03.png)
+
+MySQL doesn't appear to like the way my "time_taken" is formatted and there appears to be an error with line 17 of save_timesheet.php:
+
+        if ($conn->query($sql) === TRUE) {
+
+If double checked and $conn is correct: 
+
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+How does MySQL format time??
+
 
 
 
