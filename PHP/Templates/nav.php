@@ -13,11 +13,13 @@
         <nav>
             <ul>
                 <a href="/PHP/Templates/home.php">Home</a>&nbsp
+                <!-- <a href="/PHP/Templates/home.php">Login</a>&nbsp
+                <a href="/PHP/Templates/home.php">Register</a>&nbsp -->
+
+                <!-- if logged in -->
                 <a href="/PHP/Templates/timesheet.php">New Time Sheet</a>&nbsp
                 <a href="/PHP/Templates/report.php">Time Sheet Report</a></a>&nbsp
                 <a href="/PHP/Templates/update.php">Update Form</a></a>
-
-
             </ul>
         </nav>
     </header>

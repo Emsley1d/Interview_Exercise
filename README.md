@@ -69,7 +69,7 @@ Before getting to work I wanted to establish the best way to create a Windows Fo
 
 ## Actual Technology Used
 
-For the above reasons I then chose to develop a Web Based Application using PHP; despite having never used it before. I decided to avoid ASP.NET; as it's more suited to large scale applications I think it would be overkill for WEF's needs.
+For the above reasons I then chose to develop a Web Based Application using PHP; despite having never used it before. I decided to avoid ASP.NET; my research suggests it's more suited to large scale applications so it would be overkill for WEF's needs.
 #
 
 ## Build Notes.
@@ -92,11 +92,16 @@ I attempted to use the .smarty file extension in place of .tpl but my VS Code fa
 
 base.php was effectively going to be a homepage but I can't get the block content to extend to other pages so I am just going to turn it into the nav bar.
 
+## Forms
+
 I was going to create login and registration functions (authentication and authorisation are two of my favourite things to develop) but the brief doesn't stipulate these are required so I changed login.php to timesheet.php and created A Time Sheet Form. Having said that as this is a Web Application anyone could access it so it'll need to be protected with credentials. 
 
-Created Time Sheet Report page so you can search by Employee, Job Type and Date (search yet to work)
-Created Update page to add/remove employees/job types (psuedo code only)
-Creating CalculateTime function to calculate time taken from job start to finish.
+Created Time Sheet Report page so you can search by Employee, Job Type and Date (search yet to work).<br>
+Created Update page to add/remove employees/job type.(add/remove functions yet to work).<br>
+Creating CalculateTime function to calculate time taken from job start to finish. (written in JS (as opposed to PHP) as keen to get starting on database/form functionality)<br>
+
+I am happy with the basics of the Front End so am going to turn my attention to creating a database.
+
 
 
 

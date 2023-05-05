@@ -10,12 +10,21 @@ include 'nav.php';
 
 	<script>
 		function calculateTime() {
-			const startTime = new Date(document.getElementById("start_date").value);
-			const endTime = new Date(document.getElementById("end_date").value);
-			const timeDiff = endTime.getTime() - startTime.getTime();
-			const hours = timeDiff / (1000 * 60 * 60);
-			document.getElementById("time_taken").value = hours.toFixed(2) + " hours";
+			const startTime = document.getElementById('start_time').value;
+			const endTime = document.getElementById('end_time').value;
+			const startDateTime = new Date(`2000-01-01 ${startTime}`);
+			const endDateTime = new Date(`2000-01-01 ${endTime}`);
+			const timeDiff = Math.abs(endDateTime - startDateTime);
+			const hours = Math.floor(timeDiff / 3600000);
+			const minutes = Math.floor((timeDiff % 3600000) / 60000);
+			const formattedHours = hours < 10 ? `0${hours}` : hours;
+			const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+			const timeTaken = `${formattedHours} : ${formattedMinutes}`;
+			document.getElementById('time_taken').value = timeTaken;
+		}
 	</script>
+
+
 
 	<body>
 		<form action="#" method="POST">
@@ -42,20 +51,18 @@ include 'nav.php';
 			<input type="date" id="date" name="date" required><br><br>
 
 			<label for="start_time">Start Time:</label>
-			<input type="time" id="start_date" name="start_date" required><br><br>
+			<input type="time" id="start_time" name="start_time" required><br><br>
 
 			<label for="end_time">End Time:</label>
-			<input type="time" id="end_date" name="end_date" required><br><br>
+			<input type="time" id="end_time" name="end_time" required><br><br>
 
 			<button type="button" onclick="calculateTime()">Calculate Time Taken</button><br><br>
 
 			<label for="time_taken">Time Taken:</label>
 			<input type="text" id="time_taken" name="time_taken" readonly><br><br>
 
-			<button type="submit">Save Time Sheet</button>&nbsp &nbsp<button type="reset" value="Reset">Clear Form</button>
+			<button type="submit">Save Time Sheet</button>&nbsp &nbsp<button type="reset" value="Reset">Clear
+				Form</button>
 		</form>
 
-		<script>
-
-		</script>
 </div>
