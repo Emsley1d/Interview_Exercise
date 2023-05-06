@@ -8,10 +8,17 @@ include 'config.php';
 $employee_query = "SELECT name FROM employees";
 $employee_result = mysqli_query($conn, $employee_query);
 
+// Create the select element for the employee dropdown menu
+echo '<select id="employee" name="employee" required>';
+echo '<option value="select_employee">Select employee</option>';
+
 // Loop through the results + display
 while ($employee_row = mysqli_fetch_assoc($employee_result)) {
      echo '<option value="' . $employee_row['name'] . '">' . $employee_row['name'] . '</option>';
 }
+
+echo '</select>';
+
 
 // ! JOB FETCH REQUESTS
 

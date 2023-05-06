@@ -236,7 +236,11 @@ The employee names now appear on each of the 3 pages however, not in the drop do
 
 ![fetch requests](/Images/Screenshot%202023-05-06%20at%2020.58.08.png)
 
+I added echo statements to the employee fetch requests and now the names do appear in a drop down... just not the drop down I wanted:
 
+![fetch request drop down](/Images/Screenshot%202023-05-06%20at%2021.11.26.png)
+
+Realised I can then add the echo statements directly into the HTML so removed them from fetch_requests and added the echo statements to each of the 3 pages (timesheet, report and update).
 
 
 #

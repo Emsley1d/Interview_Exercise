@@ -35,7 +35,16 @@ include 'fetch_requests.php';
 
 			<label for="employee">Employee:</label>
 			<select id="employee" name="employee" required>
-				<option value="">Select employee</option>
+				<option value="select_employee">Select employee</option>
+				<?php
+				$employee_query = "SELECT name FROM employees";
+				$employee_result = mysqli_query($conn, $employee_query);
+
+				// Loop through the results and display them as options in the drop-down menu
+				while ($employee_row = mysqli_fetch_assoc($employee_result)) {
+					echo '<option value="' . $employee_row['name'] . '">' . $employee_row['name'] . '</option>';
+				}
+				?>
 			</select><br><br>
 
 			<label for="job">Job:</label>
@@ -58,7 +67,8 @@ include 'fetch_requests.php';
 			<label for="time_taken">Time Taken:</label>
 			<input type="text" id="time_taken" name="time_taken" readonly><br><br> -->
 
-			<button type="submit">Save Time Sheet</button>&nbsp &nbsp<button type="reset" value="Reset">Clear Form</button>
+			<button type="submit">Save Time Sheet</button>&nbsp &nbsp<button type="reset" value="Reset">Clear
+				Form</button>
 		</form>
 
 </div>
