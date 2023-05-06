@@ -140,11 +140,17 @@ MySQL doesn't appear to like the way my "time_taken" is formatted and there appe
 
         if ($conn->query($sql) === TRUE) {
 
-If double checked and $conn is correct: 
+I commented out time_taken and the calculateTime function from timesheet.php and deleted time_taken from save_timesheet.php. I then deleted the time_taken row from the MySQL table and tested the form again; this time submitting the form was succesful:
 
-        $conn = new mysqli($servername, $username, $password, $dbname);
+![timesheet saved succesfully](/Images/Screenshot%202023-05-06%20at%2009.26.58.png)
 
-How does MySQL format time??
+The data saved into MySQL; albeit the job type was duplicated into the employee field and the id field was "null":
+
+![MySQL](/Images/Screenshot%202023-05-06%20at%2009.27.45.png)
+
+The employee and job type drop downs obviously differ on timesheet.php and nor is job/$job duplicated on save_timesheet.php.
+
+
 
 
 

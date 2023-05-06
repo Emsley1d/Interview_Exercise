@@ -8,7 +8,7 @@ include 'nav.php';
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<script>
+	<!-- <script>
 		function calculateTime() {
 			const startTime = document.getElementById('start_time').value;
 			const endTime = document.getElementById('end_time').value;
@@ -22,7 +22,7 @@ include 'nav.php';
 			const timeTaken = `${formattedHours} : ${formattedMinutes}`;
 			document.getElementById('time_taken').value = timeTaken;
 		}
-	</script>
+	</script> -->
 
 
 
@@ -56,10 +56,10 @@ include 'nav.php';
 			<label for="end_time">End Time:</label>
 			<input type="time" id="end_time" name="end_time" required><br><br>
 
-			<button type="button" onclick="calculateTime()">Calculate Time Taken</button><br><br>
+			<!-- <button type="button" onclick="calculateTime()">Calculate Time Taken</button><br><br>
 
 			<label for="time_taken">Time Taken:</label>
-			<input type="text" id="time_taken" name="time_taken" readonly><br><br>
+			<input type="text" id="time_taken" name="time_taken" readonly><br><br> -->
 
 			<button type="submit">Save Time Sheet</button>&nbsp &nbsp<button type="reset" value="Reset">Clear Form</button>
 		</form>
