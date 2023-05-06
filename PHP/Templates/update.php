@@ -36,7 +36,7 @@ include 'save_update.php'
 
         <label for="remove_job">Remove:</label>
         <select id="remove_job" name="remove_job">
-            <option value="">Select job type</option>
+            <option value="job">Select job type</option>
             <?php echo generateJobTypeList($conn); ?>
         </select>&nbsp<button type="submit">Remove</button><br><br>
 

@@ -6,7 +6,7 @@ include 'config.php';
 function generateEmployeeList($conn)
 {
     // Retrieve list of employees from database
-    $sql = "SELECT * FROM employees";
+    $sql = "SELECT id, name FROM employees";
     $result = mysqli_query($conn, $sql);
 
     // Generate HTML for drop-down list
@@ -24,8 +24,14 @@ if (isset($_POST['add_employee'])) {
     $name = $_POST['add_employee'];
 
     // Insert new employee into database
-    $sql = "INSERT INTO employees (name) VALUES ('$name')";
-    mysqli_query($conn, $sql);
+    $stmt = $conn->prepare("INSERT INTO employees (name) VALUES (?)");
+    $stmt->bind_param("s", $name);
+    if ($stmt->execute()) {
+        echo "Employee added successfully.";
+    } else {
+        echo "Error adding employee: " . mysqli_error($conn);
+    }
+
 }
 
 // Handle form submission to remove employee
@@ -33,22 +39,22 @@ if (isset($_POST['remove_employee'])) {
     $id = $_POST['remove_employee'];
 
     // Remove employee from database
-    $sql = "DELETE FROM employees WHERE id = $id";
+    $sql = "DELETE FROM employees WHERE name = '$name'";
     mysqli_query($conn, $sql);
 }
 
 // Generate HTML for dynamic job type drop-down list
 function generateJobTypeList($conn)
 {
-    // Retrieve list of job types from database
-    $sql = "SELECT * FROM job_types";
+    // Retrieve list of jobs types from database
+    $sql = "SELECT id, job FROM job_types";
     $result = mysqli_query($conn, $sql);
 
     // Generate HTML for drop-down list
     $select = '<select id="remove_job" name="remove_job">';
     $select .= '<option value="">Select job type</option>';
     while ($row = mysqli_fetch_assoc($result)) {
-        $select .= '<option value="' . $row['id'] . '">' . $row['name'] . '</option>';
+        $select .= '<option value="' . $row['job'] . '">' . '</option>';
     }
     $select .= '</select>';
     return $select;
@@ -59,7 +65,7 @@ if (isset($_POST['add_job'])) {
     $name = $_POST['add_job'];
 
     // Insert new job type into database
-    $sql = "INSERT INTO job_types(name) VALUES ('$name')";
+    $sql = "INSERT INTO job_types (job) VALUES ('$job')";
     mysqli_query($conn, $sql);
 }
 

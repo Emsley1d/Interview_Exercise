@@ -102,7 +102,7 @@ Creating CalculateTime function to calculate time taken from job start to finish
 
 I am happy with the basics of the Front End so am going to turn my attention to creating a database.
 
-## Database
+## Database & Time Sheet Form
 
 I considered using SQLite for the database (being a good option for small to medium sized web applications) but without knowing WEF Engineering's current employee count (hopefully small if they've been doing it on paper!) or potential future count I thought it best to play it safe and future proof the application by using MySQL due to the scalability it offers vs SQLite. 
 
@@ -150,6 +150,8 @@ The data saved into MySQL; albeit the job type was duplicated into the employee 
 
 The employee and job type drop downs obviously differ on timesheet.php and nor is job/$job duplicated on save_timesheet.php.
 
+## Update Form
+
 With the form/database atleast now working I want to turn my attention to the add/remove options for updating the options on the employee/job type drop downs.<br>
 I created save_update.php to be in keeping with save_timesheet.php.<br>
 
@@ -167,6 +169,16 @@ When I attempted to add names I received error messages:
 
 ![employee add error message](/Images/Screenshot%202023-05-06%20at%2012.05.19.png)
 
-And nothing saved into MySQL; however the added names would appear randomly spaced on the Update page:
+The names do save into the employees table in MySQL; however they do so with blank rows between them.
 
-![employee list](/Images/Screenshot%202023-05-06%20at%2012.10.33.png)
+![employee table](/Images/Screenshot%202023-05-06%20at%2012.35.17.png)
+
+These names then appear on the Update page (including blank rows) but not in the select employee drop down; which remains empty.
+
+![employee update](/Images/Screenshot%202023-05-06%20at%2012.37.09.png)
+
+Testing the page I realised the blank rows between names are created when I try to add a job type. The job type does not save to the job_types MySQL table but creates blank rows in the employee tables. 
+
+Unsure exactly how but in playing around with the save_update.php file I managed to remove the blank rows from the employees table in MySQL.
+
+Rewrote "Insert new employee into database" and included error handling. However I receive a success message of "Employee added successfully"
