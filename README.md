@@ -150,6 +150,8 @@ The data saved into MySQL; albeit the job type was duplicated into the employee 
 
 The employee and job type drop downs obviously differ on timesheet.php and nor is job/$job duplicated on save_timesheet.php.
 
+With the form/database atleast now working I want to turn my attention to the add/remove options for updating the options on the employee/job type drop downs.<br>
+I created save_update.php to be in keeping with save_timesheet.php.<br>
 
 
 
