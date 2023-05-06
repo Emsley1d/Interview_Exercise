@@ -104,7 +104,7 @@ I am happy with the basics of the Front End so am going to turn my attention to 
 
 ## Database
 
-I considered using SQLite for the database (being a good option for small to medium sized web applications) but without knowing WEF Engineering's current employee count (hopefully small if they've been doing it on paper!) or potential future count I thought it best to play it safe and use MySQL due to the scalability it offers vs SQLite. 
+I considered using SQLite for the database (being a good option for small to medium sized web applications) but without knowing WEF Engineering's current employee count (hopefully small if they've been doing it on paper!) or potential future count I thought it best to play it safe and future proof the application by using MySQL due to the scalability it offers vs SQLite. 
 
 MySQL installed via brew and new user created.<br>
 Tried to create a MYSQL database but kept running into a syntax error "ERROR 1064 (42000)"; eventually realised the user password had to be in speech marks.<br>
@@ -153,16 +153,20 @@ The employee and job type drop downs obviously differ on timesheet.php and nor i
 With the form/database atleast now working I want to turn my attention to the add/remove options for updating the options on the employee/job type drop downs.<br>
 I created save_update.php to be in keeping with save_timesheet.php.<br>
 
+I created a new table in MySQL for employee details; for the purpose of this exercise I just included the employee's names but the table could hold contact details, salary, position etc etc:
 
+        CREATE TABLE employees (
+        name VARCHAR(50) NOT NULL );
 
+I created a second table for job types; again this could hold more information such as typical cost, average length of time but for this exercise I am just including the job type:
 
+        CREATE TABLE job_types (
+        job VARCHAR(50) NOT NULL );
 
+When I attempted to add names I received error messages:
 
+![employee add error message](/Images/Screenshot%202023-05-06%20at%2012.05.19.png)
 
+And nothing saved into MySQL; however the added names would appear randomly spaced on the Update page:
 
-
-
-
-
-
-
+![employee list](/Images/Screenshot%202023-05-06%20at%2012.10.33.png)

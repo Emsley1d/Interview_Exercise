@@ -1,8 +1,9 @@
 <?php
 include 'nav.php';
+include 'save_update.php'
 ?>
 
-<div class="form" ?>
+<div class="form">
 
     <h1>Update:</h1>
 
@@ -21,8 +22,8 @@ include 'nav.php';
 
         <label for="remove_employee">Remove:</label>
         <select id="remove_employee" name="remove_employee">
-        <option value="">Select employee</option>
-            <?php echo generateEmployeeList(); ?>
+            <option value="">Select employee</option>
+            <?php echo generateEmployeeList($conn); ?>
         </select>&nbsp<button type="submit">Remove</button><br><br>
 
         <br>
@@ -30,14 +31,15 @@ include 'nav.php';
 
         <h3 class="update_header">Job:</h3>
 
-        <label for="job">Add:</label>
-        <input type="text" id="add_job" name="add_job">&nbsp<button type="submit">add</button><br><br>
+        <label for="add_job">Add:</label>
+        <input type="text" id="add_job" name="add_job">&nbsp<button type="submit">Add</button><br><br>
 
-        <label for="job">Remove:</label>
+        <label for="remove_job">Remove:</label>
         <select id="remove_job" name="remove_job">
             <option value="">Select job type</option>
-            <?php echo generateEmployeeList(); ?>
+            <?php echo generateJobTypeList($conn); ?>
         </select>&nbsp<button type="submit">Remove</button><br><br>
 
+    </form>
 
 </div>
