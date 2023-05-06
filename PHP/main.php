@@ -9,5 +9,4 @@ $smarty = new Smarty();
 // $smarty->display('PHP/Templates/nav.php');
 // $smarty->display("PHP/Templates/timesheet.php");
 
-
 ?>

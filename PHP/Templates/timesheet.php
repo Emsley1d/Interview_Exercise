@@ -33,17 +33,11 @@ include 'nav.php';
 			<label for="employee">Employee:</label>
 			<select id="employee" name="employee" required>
 				<option value="">Select employee</option>
-				<option value="job1">Dan Emsley</option>
-				<option value="job2">John Smith</option>
-				<option value="job3">Sophie Hunt</option>
 			</select><br><br>
 
 			<label for="job">Job:</label>
 			<select id="job" name="job" required>
 				<option value="">Select job type</option>
-				<option value="job1">Job 1</option>
-				<option value="job2">Job 2</option>
-				<option value="job3">Job 3</option>
 			</select><br><br>
 
 

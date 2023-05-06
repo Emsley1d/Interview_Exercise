@@ -197,6 +197,46 @@ As it stands regarding adding/removing employees and job types on the update pag
 
 I want to establish why the job options do not appear below the employee options; they have previously before I updated a couple of things on save_update.php. If I can resolve the issue I can then test the job functionality. If the functionality works fine it'll help me establish why the remove function for employees does not work. 
 
+I realised thay if I delete "<?php echo generateEmployeeList($conn); ?>" from update.php then the job options appear.
+
+Testing the job functionality it would appear to be in the same sitation as the employee functionality. Jobs can be added and appear in the job_types table in MySQL however the remove drop down appears empty. 
+
+Interestingly if I try and add an employee whilst line "<?php echo generateEmployeeList($conn); ?>" remains deleted then the employee is still added to the table in MySQL.<br> 
+I have also deleted line "<?php echo generateJobTypeList($conn); ?>" but can continue to still 
+Each time I add a new job or employee it creates a blank entry in the other table. 
+
+I have turned my attenion to timesheet.php and save_timesheet.php. I want to see if I can get the employee/job type drop downs working on the time sheet form to see if that'll help me get them working on the updates page.<br>
+I added fetch queries to save_timesheet.php:
+
+        // Fetch employees from the database
+        $employee_query = "SELECT name FROM employees";
+        $employee_result = mysqli_query($conn, $employee_query);
+
+        // Fetch job types from the database
+        $job_query = "SELECT job FROM job_types";
+        $job_result = mysqli_query($conn, $job_query);
+
+Added the below to timesheet.php; however, but as with update.php doing so prevented anything rendering on the page beyond these lines of code:
+
+Employee:
+
+	<?php while ($employee_row = mysqli_fetch_assoc($employee_result)) { ?>
+		<option value="<?php echo $employee_row['name']; ?>"><?php echo $employee_row['name']; ?></option>
+        <?php } ?>
+
+Job:
+
+	<?php while ($job_row = mysqli_fetch_assoc($job_result)) { ?>
+		<option value="<?php echo $job_row['job']; ?>"><?php echo $job_row['job']; ?></option>
+	<?php } ?>
 
 
+
+
+
+
+* What can be deleted; .htaccess, vendor files etc? As no longer using Smarty.
+* Job type is still duplicated into employee field in MySQL when adding a new timesheet.
+* Why are empty entries created in employees/job_types when an entry is added to the other table?
+* Possible registration/login options.
 

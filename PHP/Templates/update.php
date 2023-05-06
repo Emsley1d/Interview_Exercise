@@ -15,7 +15,7 @@ include 'save_update.php';
 
     <form action="#" method="POST">
 
-        <!-- <h3 class="update_header">Employee:</h3>
+        <h3 class="update_header">Employee:</h3>
 
         <label for="add_employee">Add:</label>
         <input type="text" id="add_employee" name="add_employee">&nbsp<button type="submit">Add</button><br><br>
@@ -23,10 +23,10 @@ include 'save_update.php';
         <label for="remove_employee">Remove:</label>
         <select id="remove_employee" name="remove_employee">
             <option value="name">Select employee</option>
-            <?php echo generateEmployeeList($conn); ?>
+
         </select>&nbsp<button type="submit">Remove</button><br><br>
 
-        <br> -->
+        <br>
 
 
         <h3 class="update_header">Job:</h3>
@@ -37,7 +37,7 @@ include 'save_update.php';
         <label for="remove_job">Remove:</label>
         <select id="remove_job" name="remove_job">
             <option value="job">Select job type</option>
-            <?php echo generateJobTypeList($conn); ?>
+
         </select>&nbsp<button type="submit">Remove</button><br><br>
 
     </form>
