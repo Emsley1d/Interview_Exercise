@@ -1,5 +1,8 @@
 <?php
+
 include 'nav.php';
+include 'fetch_requests.php';
+
 ?>
 
 <div class="form">

@@ -1,5 +1,6 @@
 <?php
 include 'nav.php';
+include 'fetch_requests.php';
 include 'save_update.php';
 ?>
 

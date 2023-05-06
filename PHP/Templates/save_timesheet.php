@@ -6,19 +6,15 @@ include 'config.php';
 // Connect to the database
 $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 
+// ! or??
+
+// Connect to the database
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
 // Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-
-// Fetch employees from the database
-$employee_query = "SELECT name FROM employees";
-$employee_result = mysqli_query($conn, $employee_query);
-
-// Fetch job types from the database
-$job_query = "SELECT job FROM job_types";
-$job_result = mysqli_query($conn, $job_query);
-
 
 // Form Submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

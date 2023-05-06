@@ -230,13 +230,22 @@ Job:
 		<option value="<?php echo $job_row['job']; ?>"><?php echo $job_row['job']; ?></option>
 	<?php } ?>
 
+Employee/job fetch requsts will need to be used 3 times; on the timesheet update page and the report page. I realised it would be best practice to have a seperate file so I removed the fetch requests from save_timesheet and created fetch_requests.php which can then be included on the 3 pages. 
+
+The employee names now appear on each of the 3 pages however, not in the drop down menus:
+
+![fetch requests](/Images/Screenshot%202023-05-06%20at%2020.58.08.png)
 
 
 
 
+#
+
+## Reminders
 
 * What can be deleted; .htaccess, vendor files etc? As no longer using Smarty.
 * Job type is still duplicated into employee field in MySQL when adding a new timesheet.
 * Why are empty entries created in employees/job_types when an entry is added to the other table?
 * Possible registration/login options.
+* Though CSS isn't my priority (I would rather focus on the functionality as it is more difficult) it would be nice to find a PHP library to improve the appearance of the forms. 
 
