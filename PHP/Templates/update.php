@@ -1,6 +1,6 @@
 <?php
 include 'nav.php';
-include 'save_update.php'
+include 'save_update.php';
 ?>
 
 <div class="form">
@@ -15,18 +15,18 @@ include 'save_update.php'
 
     <form action="#" method="POST">
 
-        <h3 class="update_header">Employee:</h3>
+        <!-- <h3 class="update_header">Employee:</h3>
 
         <label for="add_employee">Add:</label>
         <input type="text" id="add_employee" name="add_employee">&nbsp<button type="submit">Add</button><br><br>
 
         <label for="remove_employee">Remove:</label>
         <select id="remove_employee" name="remove_employee">
-            <option value="">Select employee</option>
+            <option value="name">Select employee</option>
             <?php echo generateEmployeeList($conn); ?>
         </select>&nbsp<button type="submit">Remove</button><br><br>
 
-        <br>
+        <br> -->
 
 
         <h3 class="update_header">Job:</h3>

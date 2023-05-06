@@ -181,4 +181,22 @@ Testing the page I realised the blank rows between names are created when I try 
 
 Unsure exactly how but in playing around with the save_update.php file I managed to remove the blank rows from the employees table in MySQL.
 
-Rewrote "Insert new employee into database" and included error handling. However I receive a success message of "Employee added successfully"
+I rewrote "Insert new employee into database" and included error handling. However, I receive a success message of "Employee added successfully" however the added employee name doesn't appear in the Employees table in MySQL. 
+
+Corrected a few mismatches between field names in the tables vs field names in the save_update.php code. For example; I had incorrectly referred to the job_types table as just 'job'. This has resolved the above issue and now employee names are saved into their respective table in MySQL.
+
+### Update Form sitrep
+
+As it stands regarding adding/removing employees and job types on the update page:
+
+- Employee names can be added to the employee table (confirmed in MySQL).
+- The "select employee" drop down for removing an employee does not populate with the added employee names and remains blank.
+- I am unable to test the job add/remove functionality as nothing beyond the employee drop down is rendered in the browser:
+
+![employee drop down](/Images/Screenshot%202023-05-06%20at%2014.37.15.png)
+
+I want to establish why the job options do not appear below the employee options; they have previously before I updated a couple of things on save_update.php. If I can resolve the issue I can then test the job functionality. If the functionality works fine it'll help me establish why the remove function for employees does not work. 
+
+
+
+
