@@ -185,7 +185,7 @@ I rewrote "Insert new employee into database" and included error handling. Howev
 
 Corrected a few mismatches between field names in the tables vs field names in the save_update.php code. For example; I had incorrectly referred to the job_types table as just 'job'. This has resolved the above issue and now employee names are saved into their respective table in MySQL.
 
-### Update Form sitrep
+## Update Form sitrep
 
 As it stands regarding adding/removing employees and job types on the update page:
 
@@ -246,6 +246,21 @@ I tested the timesheet and timesheets are now saved correctly without the job ty
 
 ![timesheets correct](/Images/Screenshot%202023-05-07%20at%2014.07.23.png)
 
+I also tested the add/remove functionality for both employees and jobs and both work correctly. Deleting a blank each from the drop downs appears to delete all blank rows however when a new job type or employee name is added a blank record is still created in the other table. I'm sure I could resolve this by having splitting the employee and job options on to different pages but it would be nice to keep them on one.
+I'll come back and revisit this problem if I can get the report form up and running.
+
+## Report Form.
+
+The brief for the exercise states "they would like to be able to review timesheets
+entered via a Timesheet Summary Report" and this is what my report page will hopefully offer. WEF Engineering will be able to search by a combination of employee, job type and date to create a report. 
+
+I deleted all existing data in my databases as there were still some rows where job type had been duplicated in the employee column. I deleted employee and job types via my update page but for the time sheets I had created thus far I did so in MySQL using the TRUNCATE TABLE command.
+
+I then used my timesheet page to add fresh data to MySQL.
+
+Created run_report.php.
+
+
 
 
 
@@ -254,8 +269,9 @@ I tested the timesheet and timesheets are now saved correctly without the job ty
 ## Reminders
 
 * What can be deleted; .htaccess, vendor files etc? As no longer using Smarty.
-* Job type is still duplicated into employee field in MySQL when adding a new timesheet.
 * Why are empty entries created in employees/job_types when an entry is added to the other table?
 * Possible registration/login options.
 * Though CSS isn't my priority (I would rather focus on the functionality as it is more difficult) it would be nice to find a PHP library to improve the appearance of the forms. 
+* Get the calculate time taken function working. 
+* Potentially add a delete button to the report page to allow users to delete records.
 
