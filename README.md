@@ -260,11 +260,25 @@ I then used my timesheet page to add fresh data to MySQL.
 
 I created run_report.php and had a few issues where I mistakenly referred to the "job" column in my timesheets table as "job_type" which resulted in a couple of errors.
 
-If I search solely by an employee I can return a table of jobs:
+I can now search by the following and return records:
 
-![employee table](/Images/Screenshot%202023-05-07%20at%2015.14.14.png)
+* employee
 
-However, if I search by anything other than just employee (including combinations of employee and job type/date) I get no results. 
+![dan emsley employee](/Images/Screenshot%202023-05-07%20at%2015.14.14.png)
+
+* employee and job type
+
+![dan emsley employee and job type](/Images/Screenshot%202023-05-07%20at%2016.54.53.png)
+
+* employee and date
+
+![dan emsley employee and date](/Images/Screenshot%202023-05-07%20at%2016.47.57.png)
+
+but searching by the below does not currently work:
+
+* job type
+* date
+* date and job type
 
 
 
