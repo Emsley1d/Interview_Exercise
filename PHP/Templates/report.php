@@ -1,39 +1,51 @@
 <?php
 include 'nav.php';
 include 'fetch_requests.php'
-?>
+    ?>
 
 <div class="form">
-	<h1>Time Sheet Report</h1>
+    <h1>Time Sheet Report</h1>
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <h3>Please search by one or more fields:</h3>
 
-<form action="#" method="POST">
+    <form action="#" method="POST">
 
 
-    <label for="employee">Search By Employee:</label>
-    <select id="employee" name="employee">
-        <option value="">Select employee</option>
-        <option value="job1">Dan Emsley</option>
-        <option value="job2">John Smith</option>
-        <option value="job3">Sophie Hunt</option>
-    </select><br><br>
+        <label for="employee">Search By Employee:</label>
+        <select id="employee" name="employee">
+            <option value="name">Select employee</option>
+            <?php
+            $employee_query = "SELECT name FROM employees";
+            $employee_result = mysqli_query($conn, $employee_query);
 
-    <label for="job">Search by Job Type:</label>
-    <select id="job" name="job">
-        <option value="">Select job type</option>
-        <option value="job1">Job 1</option>
-        <option value="job2">Job 2</option>
-        <option value="job3">Job 3</option>
-    </select><br><br>
+            // Loop through the results and display them as options in the drop-down menu
+            while ($employee_row = mysqli_fetch_assoc($employee_result)) {
+                echo '<option value="' . $employee_row['name'] . '">' . $employee_row['name'] . '</option>';
+            }
+            ?>
+        </select><br><br>
+
+        <label for="job">Search by Job Type:</label>
+        <select id="job" name="job">
+            <option value="">Select job type</option>
+            <?php
+            $job_query = "SELECT job FROM job_types";
+            $job_result = mysqli_query($conn, $job_query);
+
+            // Loop through the results and display them as options in the drop-down menu
+            while ($job_row = mysqli_fetch_assoc($job_result)) {
+                echo '<option value="' . $job_row['job'] . '">' . $job_row['job'] . '</option>';
+            }
+            ?>
+        </select><br><br>
 
 
-    <label for="start_time">Search By Date:</label>
-    <input type="date" id="date" name="date"><br><br>
+        <label for="start_time">Search By Date:</label>
+        <input type="date" id="date" name="date"><br><br>
 
-    <button type="submit">Search</button>&nbsp &nbsp<button type="reset" value="Reset">Clear Form</button>
+        <button type="submit">Search</button>&nbsp &nbsp<button type="reset" value="Reset">Clear Form</button>
 
-</form>
+    </form>

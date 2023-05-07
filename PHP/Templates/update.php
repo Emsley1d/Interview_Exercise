@@ -24,6 +24,15 @@ include 'save_update.php';
         <label for="remove_employee">Remove:</label>
         <select id="remove_employee" name="remove_employee">
             <option value="name">Select employee</option>
+            <?php
+            $employee_query = "SELECT name FROM employees";
+            $employee_result = mysqli_query($conn, $employee_query);
+
+            // Loop through the results and display them as options in the drop-down menu
+            while ($employee_row = mysqli_fetch_assoc($employee_result)) {
+                echo '<option value="' . $employee_row['name'] . '">' . $employee_row['name'] . '</option>';
+            }
+            ?>
 
         </select>&nbsp<button type="submit">Remove</button><br><br>
 
@@ -38,6 +47,15 @@ include 'save_update.php';
         <label for="remove_job">Remove:</label>
         <select id="remove_job" name="remove_job">
             <option value="job">Select job type</option>
+            <?php
+            $job_query = "SELECT job FROM job_types";
+            $job_result = mysqli_query($conn, $job_query);
+
+            // Loop through the results and display them as options in the drop-down menu
+            while ($job_row = mysqli_fetch_assoc($job_result)) {
+                echo '<option value="' . $job_row['job'] . '">' . $job_row['job'] . '</option>';
+            }
+            ?>
 
         </select>&nbsp<button type="submit">Remove</button><br><br>
 

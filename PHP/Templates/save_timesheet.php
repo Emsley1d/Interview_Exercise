@@ -4,11 +4,6 @@ include 'nav.php';
 include 'config.php';
 
 // Connect to the database
-$conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-
-// ! or??
-
-// Connect to the database
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 // Check connection

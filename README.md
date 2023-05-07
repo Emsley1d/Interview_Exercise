@@ -240,7 +240,13 @@ I added echo statements to the employee fetch requests and now the names do appe
 
 ![fetch request drop down](/Images/Screenshot%202023-05-06%20at%2021.11.26.png)
 
-Realised I can then add the echo statements directly into the HTML so removed them from fetch_requests and added the echo statements to each of the 3 pages (timesheet, report and update).
+Realised I can then add the echo statements directly into the HTML so removed them from fetch_requests and added the echo statements to each of the 3 pages (timesheet, report and update).There must be a way to call the echo statements from fetch_requests but I'll investigate doing so once I have the report and update functionality working correcty. 
+
+I tested the timesheet and timesheets are now saved correctly without the job type duplicating into the employee field:
+
+![timesheets correct](/Images/Screenshot%202023-05-07%20at%2014.07.23.png)
+
+
 
 
 #

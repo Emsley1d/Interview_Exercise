@@ -50,6 +50,15 @@ include 'fetch_requests.php';
 			<label for="job">Job:</label>
 			<select id="job" name="job" required>
 				<option value="">Select job type</option>
+				<?php
+				$job_query = "SELECT job FROM job_types";
+				$job_result = mysqli_query($conn, $job_query);
+
+				// Loop through the results and display them as options in the drop-down menu
+				while ($job_row = mysqli_fetch_assoc($job_result)) {
+					echo '<option value="' . $job_row['job'] . '">' . $job_row['job'] . '</option>';
+				}
+				?>
 			</select><br><br>
 
 
