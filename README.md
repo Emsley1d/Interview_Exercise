@@ -258,8 +258,13 @@ I deleted all existing data in my databases as there were still some rows where 
 
 I then used my timesheet page to add fresh data to MySQL.
 
-Created run_report.php.
+I created run_report.php and had a few issues where I mistakenly referred to the "job" column in my timesheets table as "job_type" which resulted in a couple of errors.
 
+If I search solely by an employee I can return a table of jobs:
+
+![employee table](/Images/Screenshot%202023-05-07%20at%2015.14.14.png)
+
+However, if I search by anything other than just employee (including combinations of employee and job type/date) I get no results. 
 
 
 

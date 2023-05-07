@@ -7,6 +7,10 @@ nav {
     flex-direction: row;
 }
 
+.report {
+    text-align: center;
+}
+
 .title {
     display: flex;
     justify-content: flex-start;

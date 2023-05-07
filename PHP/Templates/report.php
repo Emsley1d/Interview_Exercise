@@ -11,7 +11,7 @@ include 'fetch_requests.php'
 
     <h3>Please search by one or more fields:</h3>
 
-    <form action="#" method="POST">
+    <form action="run_report.php" method="POST">
 
 
         <label for="employee">Search By Employee:</label>

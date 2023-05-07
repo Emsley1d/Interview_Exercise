@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $query .= " AND employee='$employee'";
     }
     if (!empty($job)) {
-        $query .= " AND job_type='$job'";
+        $query .= " AND job='$job'";
     }
     if (!empty($date)) {
         $query .= " AND date='$date'";
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         while ($row = mysqli_fetch_assoc($result)) {
             echo '<tr>';
             echo '<td>' . $row['employee'] . '</td>';
-            echo '<td>' . $row['job_type'] . '</td>';
+            echo '<td>' . $row['job'] . '</td>';
             echo '<td>' . $row['date'] . '</td>';
             echo '<td>' . $row['start_time'] . '</td>';
             echo '<td>' . $row['end_time'] . '</td>';
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         echo '</table>';
     } else {
-        echo 'No results found.';
+        echo 'No results found; please search using a different criteria.';
     }
 }
 
