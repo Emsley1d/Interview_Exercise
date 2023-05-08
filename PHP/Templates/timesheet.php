@@ -32,6 +32,7 @@ include 'fetch_requests.php';
 	<body>
 		<form action="save_timesheet.php" method="POST">
 
+		<h3>Please populate all fields to submit a new time sheet:</h3>
 
 			<label for="employee">Employee:</label>
 			<select id="employee" name="employee" required>

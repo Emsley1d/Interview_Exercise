@@ -9,7 +9,7 @@ include 'fetch_requests.php'
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <h3>Please search by one or more fields:</h3>
+    <h3>Search by one or more fields; or just press search to show all time sheets:</h3>
 
     <form action="run_report.php" method="POST">
 
@@ -49,3 +49,5 @@ include 'fetch_requests.php'
         <button type="submit">Search</button>&nbsp &nbsp<button type="reset" value="Reset">Clear Form</button>
 
     </form>
+
+

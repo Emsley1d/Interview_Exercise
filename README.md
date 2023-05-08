@@ -281,7 +281,7 @@ However, searching by the below does not currently work:
 * date and job type
 * all fields empty (to return all timesheets)
 
-
+I added an else statement to run_report.php to show all time sheets if no options were selected. However, it currently results in the "No results found; please search using a different criteria" message.
 
 
 #
@@ -293,6 +293,8 @@ However, searching by the below does not currently work:
 * Possible registration/login options.
 * Though CSS isn't my priority (I would rather focus on the functionality as it is more difficult) it would be nice to find a PHP library to improve the appearance of the forms. 
 * Get the calculate time taken function working. 
-* When a new job type is added the success message "employee succesfully aqdded" appears.
+* When an employee is removed, a new job type added, or a job type delected the success message "employee succesfully added" appears.
 * Potentially add a delete button to the report page to allow users to delete records.
+* Potentially add an export button to the report page to allow users to export records to excel. 
+
 
