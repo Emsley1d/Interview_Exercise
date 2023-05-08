@@ -281,7 +281,15 @@ However, searching by the below does not currently work:
 * date and job type
 * all fields empty (to return all timesheets)
 
-I added an else statement to run_report.php to show all time sheets if no options were selected. However, it currently results in the "No results found; please search using a different criteria" message.
+I added an else statement to run_report.php to show all time sheets if no options were selected. However, it currently results in the "No results found; please search using a different criteria" message.<br>
+I realised my else statement included its own if/else statements; I removed these and tested the search function (with all search fields empty) and now a table appears; albeit currently empty:
+
+![empty search table](/Images/Screenshot%202023-05-08%20at%2021.00.22.png)
+
+## Time taken function
+
+I am aware my time taken function is still not working (I commented it out during development and am yet to revisit it) as per the brief of "The timesheet application needs to be able to select a Job, an Employee and the time taken on that job in each day" my current fields of "start time" and "end time" aren't sufficient. With the exercise deadline drawing near my priority now (having gotten most other things working to some degree) is to be able to calculate the time taken.
+
 
 
 #
