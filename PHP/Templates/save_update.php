@@ -68,7 +68,18 @@ if (isset($_POST['add_job'])) {
     // Insert new job type into database
     $sql = "INSERT INTO job_types (job) VALUES ('$job')";
     mysqli_query($conn, $sql);
+    
+    // ! Attempting to add job success message
+    // // Insert new job type into database
+    // $sql = $conn->prepare("INSERT INTO job_types (job) VALUES (?)");
+    // $stmt->bind_param("s", $job);
+    // if ($stmt->execute()) {
+    //     echo "Job type added successfully.";
+    // } else {
+    //     echo "Error adding job type: " . mysqli_error($conn);
+    // }
 }
+
 
 // Handle form submission to remove job type
 if (isset($_POST['remove_job'])) {

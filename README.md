@@ -274,23 +274,25 @@ I can now search by the following and return records:
 
 ![dan emsley employee and date](/Images/Screenshot%202023-05-07%20at%2016.47.57.png)
 
-but searching by the below does not currently work:
+However, searching by the below does not currently work:
 
 * job type
 * date
 * date and job type
+* all fields empty (to return all timesheets)
 
 
 
 
 #
 
-## Reminders
+## Reminders/things to fix:
 
 * What can be deleted; .htaccess, vendor files etc? As no longer using Smarty.
 * Why are empty entries created in employees/job_types when an entry is added to the other table?
 * Possible registration/login options.
 * Though CSS isn't my priority (I would rather focus on the functionality as it is more difficult) it would be nice to find a PHP library to improve the appearance of the forms. 
 * Get the calculate time taken function working. 
+* When a new job type is added the success message "employee succesfully aqdded" appears.
 * Potentially add a delete button to the report page to allow users to delete records.
 
