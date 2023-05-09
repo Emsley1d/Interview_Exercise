@@ -61,5 +61,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 
-
 ?>
+
+<button type="submit">Download Report</button>

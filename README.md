@@ -72,7 +72,7 @@ Before getting to work I wanted to establish the best way to create a Windows Fo
 For the above reasons I then chose to develop a Web Based Application using PHP; despite having never used it before. I decided to avoid ASP.NET; my research suggests it's more suited to large scale applications so it would be overkill for WEF's needs.
 #
 
-## Build Notes.
+## Build Notes:
 
 Ordinarily I would create a Wireframe and ERD before starting to create a project however having never used PHP before (and having immediately run in to problems with Windows Forms) I wanted to make sure I could get some basic files and folders up and running in VS Code and on localhost.
 
@@ -81,9 +81,10 @@ Test.php file created and running on live server.<br>
 Base.php file created and attempted to extend to login.php; it didn't work and I established I needed to install Smarty to allow me to do so.<br>
 Installed composer which then allowed me to install Smarty. Created .gitignore to prevent vendor files uploading to GitHub.<br>
 
-Smarty set up in main.php but not rendering base.tpl or login.tpl; instead I receive a 404 error and my code automatically downloads.
-Google would suggest my web server isn't set up to serve files with a .tpl extension? Established I would need to add "AddType application/x-httpd-php .tpl" to my Apache "httpd.conf" file. Looked at alternative ways to render my the .tpl files but I understand using the .tpl file extension is the best practice. Updated my Apache "httpd.conf" file and restarted Apache however still having problems. Walkthroughs suggested creating a ".htaccess" file in my project and populating it with "AddType application/x-httpd-php .tpl"; I have done this but my .tpl files still don't render in browser and continue to download automatically. <br>
-I do receive a "200" status code for the get request (::1]:52243 [200]: GET /PHP/Templates/login.tpl) so my templates are being found and served to the browser.
+I set Smarty up in main.php but not rendering base.tpl or login.tpl; instead I receive a 404 error and my code automatically downloads.<br>
+Google would suggest my web server isn't set up to serve files with a .tpl extension?<br>
+Established I would need to add "AddType application/x-httpd-php .tpl" to my Apache "httpd.conf" file. Looked at alternative ways to render my the .tpl files but I understand using the .tpl file extension is the best practice. Updated my Apache "httpd.conf" file and restarted Apache however still having problems. Walkthroughs suggested creating a ".htaccess" file in my project and populating it with "AddType application/x-httpd-php .tpl"; I have done this but my .tpl files still don't render in browser and continue to download automatically. <br>
+I do receive a "200" status code for the get request (::1]:52243 [200]: GET /PHP/Templates/login.tpl) so my templates are being found and served to the browser.<br>
 I attempted to use the .smarty file extension in place of .tpl but my VS Code failed to recognise the file extension and treated them as plain text. I changed my .tpl files to .php (having not worked with PHP before I believe this isn't the done thing?); they now render in my browser however base.php does not extend to my other pages. Realised I could extend base.php to other php files by including the below on them:
 
         <?php
@@ -92,7 +93,7 @@ I attempted to use the .smarty file extension in place of .tpl but my VS Code fa
 
 base.php was effectively going to be a homepage but I can't get the block content to extend to other pages so I am just going to turn it into the nav bar.
 
-## Forms
+## Forms:
 
 I was going to create login and registration functions (authentication and authorisation are two of my favourite things to develop) but the brief doesn't stipulate these are required so I changed login.php to timesheet.php and created A Time Sheet Form. Having said that as this is a Web Application anyone could access it so it'll need to be protected with credentials. 
 
@@ -102,7 +103,7 @@ Creating CalculateTime function to calculate time taken from job start to finish
 
 I am happy with the basics of the Front End so am going to turn my attention to creating a database.
 
-## Database & Time Sheet Form
+## Database & Time Sheet Form:
 
 I considered using SQLite for the database (being a good option for small to medium sized web applications) but without knowing WEF Engineering's current employee count (hopefully small if they've been doing it on paper!) or potential future count I thought it best to play it safe and future proof the application by using MySQL due to the scalability it offers vs SQLite. 
 
@@ -150,7 +151,7 @@ The data saved into MySQL; albeit the job type was duplicated into the employee 
 
 The employee and job type drop downs obviously differ on timesheet.php and nor is job/$job duplicated on save_timesheet.php.
 
-## Update Form
+## Update Form:
 
 With the form/database atleast now working I want to turn my attention to the add/remove options for updating the options on the employee/job type drop downs.<br>
 I created save_update.php to be in keeping with save_timesheet.php.<br>
@@ -185,7 +186,7 @@ I rewrote "Insert new employee into database" and included error handling. Howev
 
 Corrected a few mismatches between field names in the tables vs field names in the save_update.php code. For example; I had incorrectly referred to the job_types table as just 'job'. This has resolved the above issue and now employee names are saved into their respective table in MySQL.
 
-## Update Form sitrep
+## Update Form sitrep:
 
 As it stands regarding adding/removing employees and job types on the update page:
 
@@ -290,19 +291,23 @@ I realised my else statement included its own if/else statements; I removed thes
 
 I am aware my time taken function is still not working (I commented it out during development and am yet to revisit it) as per the brief of "The timesheet application needs to be able to select a Job, an Employee and the time taken on that job in each day" my current fields of "start time" and "end time" aren't sufficient. With the exercise deadline drawing near my priority now (having gotten most other things working to some degree) is to be able to calculate the time taken.
 
-
-
 #
 
-## Reminders/things to fix:
+## Fixes required:
+
+* Search functionality.
+* When an employee is removed, a new job type added, or a job type delected the success message "employee succesfully added" appears.
+* Why are empty entries created in employees/job_types when an entry is added to the other table?
+* The calculate time taken function.
+
+## Reminders:
 
 * What can be deleted; .htaccess, vendor files etc? As no longer using Smarty.
-* Why are empty entries created in employees/job_types when an entry is added to the other table?
 * Possible registration/login options.
 * Though CSS isn't my priority (I would rather focus on the functionality as it is more difficult) it would be nice to find a PHP library to improve the appearance of the forms. 
-* Get the calculate time taken function working. 
-* When an employee is removed, a new job type added, or a job type delected the success message "employee succesfully added" appears.
-* Potentially add a delete button to the report page to allow users to delete records.
-* Potentially add an export button to the report page to allow users to export records to excel. 
 
 
+## Future Improvements:
+
+* Add a delete button to the report page to allow users to delete records.
+* Add an export button to the report page to allow users to export records to excel. 
