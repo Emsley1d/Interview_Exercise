@@ -19,6 +19,7 @@ function generateEmployeeList($conn)
     return $select;
 }
 
+// ! Add employee
 // Handle form submission to add employee
 if (isset($_POST['add_employee'])) {
     $name = $_POST['add_employee'];
@@ -27,20 +28,26 @@ if (isset($_POST['add_employee'])) {
     $stmt = $conn->prepare("INSERT INTO employees (name) VALUES (?)");
     $stmt->bind_param("s", $name);
     if ($stmt->execute()) {
-        echo "Employee added successfully.";
+        echo "Employee successfully added.";
     } else {
         echo "Error adding employee: " . mysqli_error($conn);
     }
 
 }
-
+// ! Remove employee
 // Handle form submission to remove employee
 if (isset($_POST['remove_employee'])) {
     $name = $_POST['remove_employee'];
 
     // Remove employee from database
     $sql = "DELETE FROM employees WHERE name = '$name'";
-    mysqli_query($conn, $sql);
+    // mysqli_query($conn, $sql);
+    $stmt->bind_param("s", $name);
+    if ($stmt->execute()) {
+        echo "Employee successfully removed.";
+    } else {
+        echo "Error adding employee: " . mysqli_error($conn);
+    }
 }
 
 // ! JOB OPTIONS
@@ -61,6 +68,7 @@ function generateJobTypeList($conn)
     return $select;
 }
 
+// ! Add job type
 // Handle form submission to add job type
 if (isset($_POST['add_job'])) {
     $job = $_POST['add_job'];
@@ -68,19 +76,15 @@ if (isset($_POST['add_job'])) {
     // Insert new job type into database
     $sql = "INSERT INTO job_types (job) VALUES ('$job')";
     mysqli_query($conn, $sql);
-    
-    // ! Attempting to add job success message
-    // // Insert new job type into database
-    // $sql = $conn->prepare("INSERT INTO job_types (job) VALUES (?)");
-    // $stmt->bind_param("s", $job);
-    // if ($stmt->execute()) {
-    //     echo "Job type added successfully.";
-    // } else {
-    //     echo "Error adding job type: " . mysqli_error($conn);
-    // }
+        if ($stmt->execute()) {
+        echo "Job type successfully added.";
+    } else {
+        echo "Error adding job type: " . mysqli_error($conn);
+    }
+
 }
 
-
+// ! Remove job type
 // Handle form submission to remove job type
 if (isset($_POST['remove_job'])) {
     $job = $_POST['remove_job'];
@@ -88,5 +92,12 @@ if (isset($_POST['remove_job'])) {
     // Remove job type from database
     $sql = "DELETE FROM job_types WHERE job = '$job'";
     mysqli_query($conn, $sql);
+    if ($stmt->execute())  {
+        echo "Job type successfully removed.";
+    } else {
+        echo "Error: " . $query . "<br>" . mysqli_error($conn);
+    }
 }
 ?>
+
+<?php

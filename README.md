@@ -309,7 +309,15 @@ I was able to save my first time sheet with a populated time taken (other than t
 ![time sheet with time_taken](/Images/Screenshot%202023-05-10%20at%2011.31.36.png)
 
 I then updated run_report.php so that the Time Taken column and column table header would appear.
-The calculateTime function is still written in JavaScript so I want to convert it to PHP.
+The calculateTime function is still written in JavaScript so I want to convert it to PHP.<br>
+I have struggled to convert it to PHP so will keep it as JavaScript.
+
+The employeed succesfully added message that appeared for any action (including adding and removing a job type) was annoying me so in light of not being able to convert the calculateTime function to PHP I decided to focus on the update.php messages.
+
+I added messages for an employee being removed, and a job type being added or removed. However, all messages would then appear regardless of the action taken by the user:
+
+![all messages](/Images/Screenshot%202023-05-10%20at%2012.48.08.png)
+
 #
 
 ## Fixes required:
@@ -328,5 +336,9 @@ The calculateTime function is still written in JavaScript so I want to convert i
 
 ## Future Improvements:
 
+* Add authorisation and authentication to protect to protect the application as it is Web based. 
 * Add a delete button to the report page to allow users to delete records.
-* Add an export button to the report page to allow users to export records to excel. 
+* Get the "Download Report" working so users can download the time sheet report. 
+* As per the brief; add a function to automatically calculate the time remaining on each job
+(based on what timesheets have been entered up to now) and if any Employee works over 10 hours in
+a day, automatically send an email to management.
