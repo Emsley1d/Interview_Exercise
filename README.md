@@ -324,8 +324,7 @@ I added messages for an employee being removed, and a job type being added or re
 
 * Search functionality.
 * When an employee is removed, a new job type added, or a job type delected the success message "employee succesfully added" appears.
-* Why are empty entries created in employees/job_types when an entry is added to the other table?
-* The calculate time taken function.
+* Why are empty entries created in employees/job_types when an entry is added to the other table? Some of these blank entries in employees now appear to be populated with "name".
 
 ## Reminders:
 
