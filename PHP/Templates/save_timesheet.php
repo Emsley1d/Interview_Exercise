@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $date = $_POST["date"];
     $start_time = $_POST["start_time"];
     $end_time = $_POST["end_time"];
-    $time_taken = $_POST["time_taken"];
+    $time_taken = str_replace(' ', '', $_POST["time_taken"]);
 
     // Inserting time sheet data into database
 

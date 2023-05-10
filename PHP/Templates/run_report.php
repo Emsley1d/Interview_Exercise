@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Display results
     if (mysqli_num_rows($result) > 0) {
         echo '<table>';
-        echo '<tr><th>Employee</th><th>Job Type</th><th>Date</th><th>Start Time</th><th>End Time</th><th>Created At</th></tr>';
+        echo '<tr><th>Employee</th><th>Job Type</th><th>Date</th><th>Start Time</th><th>End Time</th><th>Time Taken</th><th>Created At</th></tr>';
         while ($row = mysqli_fetch_assoc($result)) {
             echo '<tr>';
             echo '<td>' . $row['employee'] . '</td>';
@@ -38,6 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo '<td>' . $row['date'] . '</td>';
             echo '<td>' . $row['start_time'] . '</td>';
             echo '<td>' . $row['end_time'] . '</td>';
+            echo '<td>' . $row['time_taken'] . '</td>';
             echo '<td>' . $row['created_at'] . '</td>';
             echo '</tr>';
         }
@@ -45,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
 
         echo '<table>';
-        echo '<tr><th>Employee</th><th>Job Type</th><th>Date</th><th>Start Time</th><th>End Time</th><th>Created At</th></tr>';
+        echo '<tr><th>Employee</th><th>Job Type</th><th>Date</th><th>Start Time</th><th>End Time</th><th>Time Taken</th><th>Created At</th></tr>';
         while ($row = mysqli_fetch_assoc($result)) {
             echo '<tr>';
             echo '<td>' . $row['employee'] . '</td>';
@@ -53,6 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo '<td>' . $row['date'] . '</td>';
             echo '<td>' . $row['start_time'] . '</td>';
             echo '<td>' . $row['end_time'] . '</td>';
+            echo '<td>' . $row['time_taken'] . '</td>';
             echo '<td>' . $row['created_at'] . '</td>';
             echo '</tr>';
         }

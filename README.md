@@ -302,6 +302,14 @@ Upon submitting my update time sheet form I received the below error; this is th
 
 ![time taken error](/Images/Screenshot%202023-05-10%20at%2011.21.48.png)
 
+Googling the error would suggest it's due to the spaces either side of the colon. I attempted to use trim ($time_taken = trim($_POST["time_taken"])) to remove these however the problem persisted so I used string replace ($time_taken = str_replace(' ', '', $_POST["time_taken"])) which resolved the issue. 
+
+I was able to save my first time sheet with a populated time taken (other than the default 00:00:00 the column populated with upon creation):
+
+![time sheet with time_taken](/Images/Screenshot%202023-05-10%20at%2011.31.36.png)
+
+I then updated run_report.php so that the Time Taken column and column table header would appear.
+The calculateTime function is still written in JavaScript so I want to convert it to PHP.
 #
 
 ## Fixes required:
