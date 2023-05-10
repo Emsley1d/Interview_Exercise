@@ -291,6 +291,17 @@ I realised my else statement included its own if/else statements; I removed thes
 
 I am aware my time taken function is still not working (I commented it out during development and am yet to revisit it) as per the brief of "The timesheet application needs to be able to select a Job, an Employee and the time taken on that job in each day" my current fields of "start time" and "end time" aren't sufficient. With the exercise deadline drawing near my priority now (having gotten most other things working to some degree) is to be able to calculate the time taken.
 
+I added a time taken column to the timesheets table in MySQL using command:
+
+        ALTER TABLE timesheets ADD COLUMN time_taken TIME NOT NULL AFTER end_time;
+
+And I reinstated the previously commented out "Calculate Time Taken" button to my timesheet.php file and the
+"$time_taken = $_POST["time_taken"]" from my save_timesheet.php file.
+
+Upon submitting my update time sheet form I received the below error; this is the same error I originally received and led me to commenting out the calculateTime function for the time being:
+
+![time taken error](/Images/Screenshot%202023-05-10%20at%2011.21.48.png)
+
 #
 
 ## Fixes required:
