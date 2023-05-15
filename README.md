@@ -1,5 +1,6 @@
 # Interview Exercise
 
+*Although this exercise isn't finished it helped me secure my first role as a Junior Software Developer. The idea was for the employer to see the thought process behind my decisions and the method in which I worked.*
 
 ## Brief:
 
